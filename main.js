@@ -17,11 +17,11 @@ app.get('/welcome/:name', function(req, res) {
     '<h1>Hello ' + req.params.name + '</h1>' +
     '</body></html>')
 })
-app.get('/jade/:flavor', function(req, res) {
+app.get('/jade/:flavor', function(req, res, next) {
   console.log(req.flavor)
-  res.render('index', {})
+  next()
 })
-app.get('/jade', function(req, res) { 
+app.get(/^\/jade\/.*/, function(req, res) { 
   res.render('index', {})
 })
 app.get('/chimney', function(req, res) { 
