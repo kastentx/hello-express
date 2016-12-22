@@ -5,7 +5,7 @@ app.get('/welcome/:name', function(req, res) {
   res.status(200)
   res.set('Content-type', 'text/html')
   res.send('<html><body>' +
-    '<h1>Hello ' + req.params.user_name + '</h1>' +
+    '<h1>Hello ' + req.params.name + '</h1>' +
     '</body></html>')
 })
 app.get('/*', function(req, res) {
