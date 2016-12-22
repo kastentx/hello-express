@@ -5,12 +5,21 @@ var app = express()
 app.set('views', path.join(__dirname, 'public'))
 app.set('view engine', 'jade')
 
+app.param('flavor', function(req, res, next, flav) {
+  req.flavor = "Favorite Flavor: " + flav
+  next()
+})
+
 app.get('/welcome/:name', function(req, res) {
   res.status(200)
   res.set('Content-type', 'text/html')
   res.send('<html><body>' +
     '<h1>Hello ' + req.params.name + '</h1>' +
     '</body></html>')
+})
+app.get('/jade/:flavor', function(req, res) {
+  console.log(req.flavor)
+  res.render('index', {})
 })
 app.get('/jade', function(req, res) { 
   res.render('index', {})
