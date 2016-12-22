@@ -1,0 +1,18 @@
+var express = require('express')
+var app = express()
+
+app.get('/welcome/:name', function(req, res) {
+  res.status(200)
+  res.set('Content-type', 'text/html')
+  res.send('<html><body>' +
+    '<h1>Hello ' + req.params.user_name + '</h1>' +
+    '</body></html>')
+})
+app.get('/*', function(req, res) {
+  res.status(200)
+  res.set('Content-type', 'text/html')
+  res.send('<html><body>' +
+    '<h1>You typed in the wrong address d00d!</h1>' +
+    '</body></html>')
+})
+app.listen(8000)
