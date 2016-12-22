@@ -4,6 +4,7 @@ var app = express()
 
 app.set('views', path.join(__dirname, 'public'))
 app.set('view engine', 'jade')
+
 app.get('/welcome/:name', function(req, res) {
   res.status(200)
   res.set('Content-type', 'text/html')
@@ -11,11 +12,9 @@ app.get('/welcome/:name', function(req, res) {
     '<h1>Hello ' + req.params.name + '</h1>' +
     '</body></html>')
 })
-
 app.get('/jade', function(req, res) { 
   res.render('index', {})
 })
-
 app.get('/chimney', function(req, res) { 
   res.status(200)
   res.set('Content-type', 'text/html')
@@ -23,7 +22,6 @@ app.get('/chimney', function(req, res) {
     '<h1 style="color:red; background:black">You found the secret chimney page!</h1>' +
     '</body></html>')
 })
-
 app.get('/*', function(req, res) {
   res.status(200)
   res.set('Content-type', 'text/html')
