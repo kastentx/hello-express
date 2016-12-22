@@ -2,12 +2,18 @@ var path = require('path')
 var express = require('express')
 var app = express()
 
+app.set('views', path.join(__dirname, 'public'))
+app.set('view engine', 'jade')
 app.get('/welcome/:name', function(req, res) {
   res.status(200)
   res.set('Content-type', 'text/html')
   res.send('<html><body>' +
     '<h1>Hello ' + req.params.name + '</h1>' +
     '</body></html>')
+})
+
+app.get('/jade', function(req, res) { 
+  res.render('index', {})
 })
 
 app.get('/chimney', function(req, res) { 
