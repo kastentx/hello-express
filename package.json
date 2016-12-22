@@ -1,0 +1,24 @@
+{
+  "name": "say-my-name",
+  "version": "1.0.0",
+  "description": "going through some express.js basics",
+  "main": "main.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "jade": "^1.11.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kastentx/hello-express.git"
+  },
+  "author": "nick kasten",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kastentx/hello-express/issues"
+  },
+  "homepage": "https://github.com/kastentx/hello-express#readme"
+}
